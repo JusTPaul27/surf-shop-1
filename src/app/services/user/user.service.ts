@@ -9,8 +9,7 @@ import { User } from 'src/app/model/user';
 })
 export class UserService {
 
-
-  private readonly BASE_URL = 'https://62bd594ebac21839b6010d22.mockapi.io/users'
+  private readonly BASE_URL = 'https://628b2f157886bbbb37b20caa.mockapi.io/users'
 
   public user?: User;
 
@@ -64,5 +63,12 @@ export class UserService {
       next: result => console.log(result),
       error: err => console.log(err)
     })
+  }
+
+  removefromCart(selectedProduct: Product) {
+    if (this.user?.cart) {
+      this.user.cart = this.user.cart.filter(id => id !== selectedProduct.id);
+      this.updateUser();
+    }
   }
 }

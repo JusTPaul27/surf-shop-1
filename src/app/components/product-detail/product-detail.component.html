@@ -5,7 +5,7 @@
     <p>Categoria: {{selectedProduct.category}}</p>
     <p>{{selectedProduct.description}}</p>
     <p>Prezzo: {{selectedProduct.price | currency: "€"}}</p>
-    <p>Quantità: {{selectedProduct.quantity}}</p>
+    <p>In stock: {{selectedProduct.quantity}}</p>
     <button (click)="addToCart()" *ngIf="userS.user">Aggiungi al carrello</button>
     <button routerLink="/login"  *ngIf="!userS.user">Fai login per acquistare</button>
     <!-- <button>{{userS.user? "ciao utente" : "niente utente"}}</button> -->

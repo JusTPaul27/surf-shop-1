@@ -4,5 +4,6 @@
     <span>{{selectedProduct.name}}</span>
     <span>{{selectedProduct.category}}</span>
     <span>{{selectedProduct.price | currency:'€'}}</span>
+    <button (click)="removeFromCart()" *ngIf="isCart">Rimuovi dal carrello</button>
   </div>
 </div>

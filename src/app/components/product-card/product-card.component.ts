@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/product';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-product-card',
@@ -9,10 +10,18 @@ import { Product } from 'src/app/model/product';
 export class ProductCardComponent implements OnInit {
 
   @Input() selectedProduct?: Product;
+  @Input() isCart:boolean = false
 
-  constructor() { }
+  constructor(private userS: UserService) { }
 
   ngOnInit(): void {
+  }
+
+  removeFromCart(){
+    if (this.selectedProduct) {
+      this.userS.removefromCart(this.selectedProduct)
+      
+    }
   }
 
 }

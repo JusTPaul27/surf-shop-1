@@ -12,6 +12,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CartLinkDirective } from './directives/cart-link/cart-link.directive';
+import { CartComponent } from './components/cart/cart.component';
 
 
 
@@ -23,7 +25,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductDetailComponent,
     LoginComponent,
     RegisterComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    CartLinkDirective,
+    CartComponent
   ],
   imports: [
     BrowserModule,

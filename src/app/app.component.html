@@ -5,7 +5,7 @@
     <a *ngIf="!userS.user" routerLink="/login">login</a>
     <a *ngIf="userS.user" (click)="logout()">logout</a>
     <a *ngIf="userS.user" routerLink="/user" >user</a>
-    <a *ngIf="userS.user && userS.user.cart">cart</a>
+    <a routerLink="/cart" appCartLink [user]="userS.user">cart</a>
   </nav>
   <!-- <h2 *ngIf="userS.user">Welcome Back {{userS.user.name}}</h2> -->
 </header>
