@@ -14,7 +14,8 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { CartLinkDirective } from './directives/cart-link/cart-link.directive';
 import { CartComponent } from './components/cart/cart.component';
-import { ChangeColorDirective } from './change-color.directive';
+import { ChangeColorDirective } from './directives/change-color/change-color.directive';
+
 
 
 
@@ -36,7 +37,8 @@ import { ChangeColorDirective } from './change-color.directive';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
