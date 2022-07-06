@@ -18,11 +18,11 @@ export class ProductCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  removeFromCart(){
+  removeFromCart(event: MouseEvent){
+    event.stopPropagation();
     if (this.selectedProduct) {
       this.userS.removefromCart(this.selectedProduct)
       this.productRemoved.emit(this.selectedProduct);
-      
     }
   }
 

@@ -2,3 +2,10 @@
   display: flex;
   flex-direction: column;
 }
+
+.order-container{
+  display: flex;
+  gap: 2px;
+  border: double 2px darkcyan;
+  padding: 8px;
+}

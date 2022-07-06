@@ -1,3 +1,4 @@
+import { Order } from "./order";
 import { Product } from "./product";
 
 export interface User {
@@ -9,7 +10,11 @@ export interface User {
   password: string;
   address: string;
   city: string;
-  cardnumber: number;
+  cardNumber: number;
   id: string;
   cart?: string[];
+  orders: Order[];
 }
+
+
+

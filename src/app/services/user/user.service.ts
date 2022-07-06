@@ -68,8 +68,13 @@ export class UserService {
 
   removefromCart(selectedProduct: Product) {
     if (this.user?.cart) {
-      this.user.cart = this.user.cart.filter(id => id !== selectedProduct.id);
+      const index = this.user.cart.indexOf(selectedProduct.id);
+      if (index >= 0) {
+        this.user.cart.splice(index, 1);
+      }
+      // this.user.cart = this.user.cart.filter(id => id !== selectedProduct.id);
       this.updateUser();
+      this.user = {... this.user}
     }
   }
 }

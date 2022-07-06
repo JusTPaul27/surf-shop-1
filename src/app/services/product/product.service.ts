@@ -33,7 +33,20 @@ export class ProductService {
 
   getUserCart(user:User) {
     return this.http.get<Product[]>(this.BASE_URL).pipe(
-      map(products => products.filter(p => user.cart?.includes(p.id)))
-    )
+      map(products => this.createCardProductList(user, products)))
+  }
+
+  createCardProductList(user: User, products: Product[]): Product[]{
+    if (user.cart) {
+      const cartProducts = [];
+      for (const id of user.cart) {
+        const product = products.find(p => p.id === id);
+        if (product) {
+          cartProducts.push(product);
+        }
+      }
+      return cartProducts;
+    }
+    return [];
   }
 }
