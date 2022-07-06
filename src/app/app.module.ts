@@ -14,6 +14,7 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { CartLinkDirective } from './directives/cart-link/cart-link.directive';
 import { CartComponent } from './components/cart/cart.component';
+import { MultiColorDirective } from './multi-color.directive';
 
 
 
@@ -29,7 +30,8 @@ import { CartComponent } from './components/cart/cart.component';
     RegisterComponent,
     UserDetailComponent,
     CartLinkDirective,
-    CartComponent
+    CartComponent,
+    MultiColorDirective
   ],
   imports: [
     BrowserModule,

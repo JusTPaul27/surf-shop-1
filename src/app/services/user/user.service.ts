@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Order } from 'src/app/model/order';
 import { Product } from 'src/app/model/product';
 import { User } from 'src/app/model/user';
 
@@ -8,6 +9,7 @@ import { User } from 'src/app/model/user';
   providedIn: 'root'
 })
 export class UserService {
+
 
   private readonly BASE_URL = 'https://628b2f157886bbbb37b20caa.mockapi.io/users'
 
@@ -76,5 +78,18 @@ export class UserService {
       this.updateUser();
       this.user = {... this.user}
     }
+  }
+
+  saveOrder(date: Date, productNames: string[], total: number) {
+    if (this.user) {
+      if (!this.user.orders) {
+        this.user.orders = [];
+      }
+      const newOrder: Order = {date: date, total: total, products: productNames}
+      this.user.orders.push(newOrder);
+      this.updateUser()
+      this.user = {... this.user};
+    }
+
   }
 }

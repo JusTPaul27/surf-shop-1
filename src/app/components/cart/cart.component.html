@@ -1,5 +1,5 @@
 <div class="container">
     <app-product-card [isCart]="true" *ngFor="let product of products" [selectedProduct]="product" (productRemoved)="getUserCartProducts()"></app-product-card>
-    <button>Conferma acquisto</button>
+    <button (click)="saveOrder()">Conferma acquisto</button>
     <span>Totale: {{total | currency: '€'}}</span>
 </div>
