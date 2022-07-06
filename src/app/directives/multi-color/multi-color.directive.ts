@@ -7,7 +7,7 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 export class MultiColorDirective {
   
   colorsArray: string[] = ['#FCFC62', '#06D6A0', '#364156', '#D2D6EF', '#D138BF','#FC9F5B', '#F84AA7',
-                           '#137547','#FF9F1C', '#48BEFF'];
+                           '#137547','#FF9F1C', '#48BEFF', '#D3EFBD', '#0C7489', '#5D2E8C', '#C879FF'];
   colorInterval: any;
   @HostListener('mouseover')
   onMouseOver(){
@@ -24,7 +24,7 @@ export class MultiColorDirective {
   @HostListener('mouseout')
   onMouseOut(){
     clearInterval(this.colorInterval);
-    this.el.nativeElement.style.backgroundColor = 'tomato'
+    // this.el.nativeElement.style.backgroundColor = 'tomato'
   }
 
   constructor(private el: ElementRef) { 
