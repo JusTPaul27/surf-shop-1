@@ -53,6 +53,7 @@ export class UserService {
       }
       this.user.cart.push(product.id);
       this.updateUser();
+      this.user = {... this.user}
     }
 
   }
